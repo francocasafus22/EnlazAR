@@ -12,3 +12,4 @@ router.post("/auth/register", (req, res) => {
 });
 
 export default router;
+ 
