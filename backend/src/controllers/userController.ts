@@ -3,6 +3,7 @@ import { validationResult } from "express-validator";
 import slug from "slug";
 import User from "../models/User";
 import { checkPassword, hashPassword } from "../utils/auth";
+import { generateJWT } from "../utils/jwt";
 
 export const createAccount = async (req: Request, res: Response) => {
   try {
@@ -29,7 +30,7 @@ export const createAccount = async (req: Request, res: Response) => {
     user.handle = handle;
 
     await user.save();
-    res.status(201).json({ message: "Usuario creado", user });
+    res.status(201).json({ message: "Usuario creado" });
   } catch (error) {
     console.error("❌ Error al registrar:", error);
     res.status(500).json({ error: error.message });
@@ -54,5 +55,8 @@ export const login = async (req: Request, res: Response) => {
     res.status(401).json({ error: error.message });
     return;
   }
+
+  generateJWT(user);
+
   res.send("Autenticado");
 };

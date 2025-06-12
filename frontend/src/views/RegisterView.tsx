@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { isAxiosError } from "axios";
+import { toast } from "sonner";
+import type { RegisterForm } from "../types";
 import ErrorMessage from "../components/ErrorMessage";
+import api from "../config/axios";
 
 export default function RegisterView() {
-  const initialValues = {
+  const initialValues: RegisterForm = {
     name: "",
     email: "",
     handle: "",
@@ -15,23 +19,29 @@ export default function RegisterView() {
     register,
     watch,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({ defaultValues: initialValues });
 
   const password = watch("password");
-  console.log(password);
 
-  const handleRegister = () => {
-    console.log("Desde HandleRegister");
+  const handleRegister = async (formData: RegisterForm) => {
+    try {
+      const { data } = await api.post(`/auth/register`, formData);
+      toast.success(data.message);
+      reset();
+    } catch (error) {
+      if (isAxiosError(error) && error.response) {
+        toast.error(error.response?.data.error);
+      }
+    }
   };
-
-  console.log(errors);
 
   return (
     <>
       <form
         onSubmit={handleSubmit(handleRegister)}
-        className="w-full max-w-md bg-base-200 p-8 rounded-xl shadow-lg space-y-6"
+        className="w-full max-w-md bg-base-200 p-8 rounded-xl shadow-lg space-y-6 mx-auto"
       >
         <h2 className="text-3xl font-bold text-base-content text-center">
           Crear Cuenta
