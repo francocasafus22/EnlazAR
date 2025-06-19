@@ -4,6 +4,7 @@ import type { LoginForm } from "../types";
 import api from "../config/axios";
 import { toast } from "sonner";
 import { isAxiosError } from "axios";
+import { Navigate } from "react-router-dom";
 
 export default function LoginView() {
   const initialValues: LoginForm = {
