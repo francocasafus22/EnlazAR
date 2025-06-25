@@ -100,7 +100,7 @@ export const updateProfileImage = async (req: Request, res: Response) => {
   try {
     form.parse(req, (error, fields, files) => {
       cloudinary.uploader.upload(
-        files.profileImage[0].filepath,
+        files.file[0].filepath,
         { public_id: uuid() },
         async function (error, result) {
           if (error) {
