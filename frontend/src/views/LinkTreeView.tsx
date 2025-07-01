@@ -3,11 +3,15 @@ import { social } from "../data/social";
 import DevTreeInputs from "../components/DevTreeInputs";
 import { isValidUrl } from "../utils/index";
 import { toast } from "sonner";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { updateProfile } from "../api/DevTreeAPI";
+import type { User } from "../types";
 
 export default function LinkTreeView() {
   const [devTreeLinks, setDevTreeLinks] = useState(social);
+
+  const queryClient = useQueryClient();
+  const user: User = queryClient.getQueryData(["user"])!;
 
   const { mutate } = useMutation({
     mutationFn: updateProfile,
@@ -32,15 +36,19 @@ export default function LinkTreeView() {
         if (isValidUrl(link.url)) {
           return { ...link, enabled: !link.enabled };
         } else {
-          toast.error("URL no valida.");
+          toast.error("URL no válida.");
         }
       }
       return link;
     });
-
-    console.log(updateLinks);
-
     setDevTreeLinks(updateLinks);
+
+    queryClient.setQueryData(["user"], (prevData: User) => {
+      return {
+        ...prevData,
+        links: JSON.stringify(updateLinks),
+      };
+    });
   };
 
   return (
@@ -55,7 +63,10 @@ export default function LinkTreeView() {
           />
         ))}
 
-        <button className="bg-slate-600 p-2 text-lg w-full rounded-lg font-bold shadow-2xl">
+        <button
+          className="bg-slate-600 p-2 text-lg w-full rounded-lg font-bold shadow-2xl"
+          onClick={() => mutate(user)}
+        >
           Guardar Cambios
         </button>
       </div>
