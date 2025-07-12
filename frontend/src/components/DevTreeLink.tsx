@@ -20,7 +20,7 @@ export default function DevTreeLink({ link }: DevTreeLinkProps) {
   return (
     <li
       ref={setNodeRef}
-      className="bg-slate-700 px-5 py-2 flex items-center gap-5 rounded-lg"
+      className="bg-slate-700 px-5 py-2 flex items-center gap-5 rounded-lg hover:bg-slate-800 focus:outline-2 focus:outline-slate-400"
       style={style}
       {...attributes}
       {...listeners}

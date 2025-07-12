@@ -125,3 +125,25 @@ export const updateProfileImage = async (req: Request, res: Response) => {
     return;
   }
 };
+
+export const getUserByHandle = async (req: Request, res: Response) => {
+  try {
+    const { handle } = req.params;
+
+    const user = await User.findOne({ handle }).select(
+      "-_id -password -__v -email"
+    );
+
+    if (!user) {
+      const error = new Error("No se ha encontrado ningun usuario");
+      res.status(404).json({ error: error.message });
+      return;
+    }
+
+    res.json(user);
+  } catch (e) {
+    const error = new Error("Hubo un error");
+    res.status(500).json({ error: error.message });
+    return;
+  }
+};
