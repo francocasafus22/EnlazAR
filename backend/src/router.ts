@@ -5,6 +5,7 @@ import {
   getUser,
   getUserByHandle,
   login,
+  searchByHandle,
   updateProfile,
   updateProfileImage,
 } from "./controllers/userController";
@@ -52,5 +53,11 @@ router.patch(
 router.post("/user/image", authenticate, updateProfileImage);
 
 router.get("/:handle", getUserByHandle);
+
+router.post(
+  "/searchByHandle",
+  body("handle").notEmpty().withMessage("Ingrese un handle"),
+  searchByHandle
+);
 
 export default router;

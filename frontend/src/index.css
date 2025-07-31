@@ -1,5 +1,15 @@
 @import "tailwindcss";
+@import "tailwindcss/utilities";
+@import "tailwindcss/theme";
 
 @plugin "daisyui" {
   themes: dark --default;
+}
+
+@theme {
+  --background-image-home: url("/bg.svg");
+}
+
+@utility bg-home-xl {
+  background-size: 50%;
 }

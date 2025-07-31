@@ -147,3 +147,20 @@ export const getUserByHandle = async (req: Request, res: Response) => {
     return;
   }
 };
+
+export const searchByHandle = async (req: Request, res: Response) => {
+  try {
+    const { handle } = req.body;
+    const existHandle = await User.findOne({ handle }).select("handle");
+
+    if (existHandle) {
+      const error = new Error("Ya está en uso, intente con otro.");
+      res.status(409).json({ error: error.message });
+    } else {
+      res.send(`Está disponible`);
+    }
+  } catch (e) {
+    const error = new Error("Hubo un error");
+    res.status(500).json({ error: error.message });
+  }
+};
