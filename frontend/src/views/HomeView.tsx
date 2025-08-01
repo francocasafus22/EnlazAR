@@ -23,9 +23,9 @@ export default function Home() {
 
               <p className="text-xl">
                 {" "}
-                Únete a más de 200 mil developers compartiendo sus redes
-                sociales, comparte tu perfil de Tiktok, Facebook, Instagram,
-                Youtube, Github y más
+                Únete a más de 200.000 personas que usan EnlazAR para compartir
+                fácil y rápido su TikTok, Instagram, YouTube, GitHub ¡y mucho
+                más!
               </p>
 
               <SearchForm />

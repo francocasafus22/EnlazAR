@@ -2,8 +2,13 @@ import { Link } from "react-router-dom";
 
 export default function Logo() {
   return (
-    <Link to={"/"}>
-      <img src="/logo.svg" alt="Logotipo DevTree" className="w-full block" />
+    <Link to={"/"} className="flex items-center space-x-2">
+      <img
+        src="/logo.png"
+        alt="Logotipo DevTree"
+        className="max-w-[50px] h-auto"
+      />
+      <h1 className="font-bold text-3xl">EnlazAR</h1>
     </Link>
   );
 }

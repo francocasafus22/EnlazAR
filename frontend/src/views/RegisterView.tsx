@@ -1,10 +1,11 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useMutation } from "@tanstack/react-query";
+import { registerUser } from "../api/DevTreeAPI";
 import { useForm } from "react-hook-form";
-import { isAxiosError } from "axios";
+
 import { toast } from "sonner";
 import type { RegisterForm } from "../types";
 import ErrorMessage from "../components/ErrorMessage";
-import api from "../config/axios";
 
 export default function RegisterView() {
   const location = useLocation();
@@ -18,6 +19,15 @@ export default function RegisterView() {
     password_confirmation: "",
   };
 
+  const registerMutation = useMutation({
+    mutationFn: registerUser,
+    onSuccess: (data) => {
+      toast.success(data.message);
+      reset();
+      navigate("/auth/login");
+    },
+  });
+
   const {
     register,
     watch,
@@ -29,16 +39,7 @@ export default function RegisterView() {
   const password = watch("password");
 
   const handleRegister = async (formData: RegisterForm) => {
-    try {
-      const { data } = await api.post(`/auth/register`, formData);
-      toast.success(data.message);
-      reset();
-      navigate("/auth/login");
-    } catch (error) {
-      if (isAxiosError(error) && error.response) {
-        toast.error(error.response?.data.error);
-      }
-    }
+    registerMutation.mutate(formData);
   };
 
   return (

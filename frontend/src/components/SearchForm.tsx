@@ -35,7 +35,7 @@ export default function SearchForm() {
   return (
     <form onSubmit={handleSubmit(handleSearch)} className="space-y-5">
       <div className="relative flex items-center bg-slate-700 rounded-lg p-2 shadow-sm border-none">
-        <label htmlFor="handle">devtree.com/</label>
+        <label htmlFor="handle">enlazar.com/</label>
         <input
           type="text"
           id="handle"
