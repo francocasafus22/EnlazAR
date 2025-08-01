@@ -13,7 +13,8 @@ export default function AppLayout() {
 
   if (isLoading) return "Cargando...";
   if (isError) {
-    return <Navigate to={"/auth/login"} />;
+    const token = localStorage.getItem("AUTH_TOKEN");
+    if (!token) return <Navigate to={"/auth/login"}></Navigate>;
   }
 
   if (data) return <DevTree data={data} />;

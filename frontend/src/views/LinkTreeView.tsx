@@ -97,8 +97,8 @@ export default function LinkTreeView() {
           };
         } else if (
           link.id > indexToUpdate &&
-          (indexToUpdate !== 0 &&
-          link.id === 1)
+          indexToUpdate !== 0 &&
+          link.id === 1
         ) {
           return {
             ...link,

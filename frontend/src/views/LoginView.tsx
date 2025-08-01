@@ -1,16 +1,33 @@
 import { useForm } from "react-hook-form";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import ErrorMessage from "../components/ErrorMessage";
 import type { LoginForm } from "../types";
-import api from "../config/axios";
 import { toast } from "sonner";
-import { isAxiosError } from "axios";
-import { Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { login } from "../api/DevTreeAPI";
 
 export default function LoginView() {
+  const queryClient = useQueryClient();
+
   const initialValues: LoginForm = {
     email: "",
     password: "",
   };
+
+  const loginMutation = useMutation({
+    mutationFn: login,
+    onSuccess: async (data) => {
+      localStorage.setItem("AUTH_TOKEN", data!);
+      toast.success("Autenticado");
+      await queryClient.invalidateQueries({ queryKey: ["user"] });
+      navigate("/admin");
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+  });
+
+  const navigate = useNavigate();
 
   const {
     register,
@@ -19,15 +36,7 @@ export default function LoginView() {
   } = useForm({ defaultValues: initialValues });
 
   const handleLogin = async (formData: LoginForm) => {
-    try {
-      const { data } = await api.post("/auth/login", formData);
-      localStorage.setItem("AUTH_TOKEN", data);
-      toast.success("Autenticado");
-    } catch (error) {
-      if (isAxiosError(error) && error.response) {
-        toast.error(error.response?.data.error);
-      }
-    }
+    loginMutation.mutate(formData);
   };
 
   return (
@@ -83,6 +92,11 @@ export default function LoginView() {
             value="Iniciar Sesión"
           />
         </form>
+        <Link to={"/auth/register"}>
+          <p className="text-center mt-3 transition-colors duration-100 hover:text-slate-500">
+            ¿No tenés una cuenta? Crea una aquí
+          </p>
+        </Link>
       </>
     </div>
   );
