@@ -84,7 +84,7 @@ export default function DevTree({ data }: DevTreeProps) {
               <img
                 src={data.image || "../../public/userplaceholder.png"}
                 alt="Imagen Perfil"
-                className="mx-auto max-w-[250px] rounded-full border-6 border-white/30"
+                className="mx-auto w-[250px] h-[250px] object-cover rounded-full border-6 border-white/30"
               />
 
               {data.description && (

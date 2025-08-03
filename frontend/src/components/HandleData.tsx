@@ -17,7 +17,7 @@ export default function HandleData({ data }: HandleDataProps) {
         <img
           src={data.image}
           alt=""
-          className="max-w-[250px] mx-auto rounded-full border-6 border-white/30 shadow-2xl"
+          className="w-[250px] h-[250px] object-cover  mx-auto rounded-full border-6 border-white/30 shadow-2xl"
         />
       )}
       <p className="text-lg text-center font-bold">{data.description}</p>

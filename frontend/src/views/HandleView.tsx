@@ -18,7 +18,7 @@ export default function HandleView() {
   useEffect(() => {
     document.body.style.minHeight = "100vh";
     document.body.style.margin = "0";
-    document.body.style.background = `linear-gradient(to bottom, ${data?.colorFrom}, ${data?.colorVia}, ${data?.colorTo})`;
+    document.body.style.background = `linear-gradient(165deg, ${data?.colorFrom}, ${data?.colorVia}, ${data?.colorTo})`;
     return () => {
       document.body.style.background = "";
     };
