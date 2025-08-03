@@ -9,16 +9,15 @@ export default function HandleData({ data }: HandleDataProps) {
   const links: SocialNetworks[] = JSON.parse(data.links).filter(
     (link: SocialNetworks) => link.enabled
   );
-  console.log(links);
 
   return (
-    <div className="space-y-6 ">
+    <div className="space-y-6">
       <p className="text-center text-5xl font-black">{data.handle}</p>
       {data.image && (
         <img
           src={data.image}
           alt=""
-          className="max-w-[250px] mx-auto rounded-4xl shadow-md"
+          className="max-w-[250px] mx-auto rounded-full border-6 border-white/30 shadow-2xl"
         />
       )}
       <p className="text-lg text-center font-bold">{data.description}</p>

@@ -26,6 +26,9 @@ export default function RegisterView() {
       reset();
       navigate("/auth/login");
     },
+    onError: (data) => {
+      toast.error(data.message);
+    },
   });
 
   const {

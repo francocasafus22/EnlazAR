@@ -74,12 +74,17 @@ export default function DevTree({ data }: DevTreeProps) {
             <div className="flex-1 ">
               <Outlet />
             </div>
-            <div className="w-full md:w-96 bg-slate-800 px-5 py-10 space-y-6 shadow-2xl">
+            <div
+              className="w-full md:w-96 px-5 py-10 space-y-6 shadow-2xl"
+              style={{
+                background: `linear-gradient(to bottom, ${data.colorFrom}, ${data.colorVia}, ${data.colorTo})`,
+              }}
+            >
               <p className="text-4xl text-center text-white">{data.handle}</p>
               <img
                 src={data.image || "../../public/userplaceholder.png"}
                 alt="Imagen Perfil"
-                className="mx-auto max-w-[250px]"
+                className="mx-auto max-w-[250px] rounded-full border-6 border-white/30"
               />
 
               {data.description && (

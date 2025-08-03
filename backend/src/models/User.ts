@@ -8,6 +8,9 @@ export interface IUser extends Document {
   description: string;
   image: string;
   links: string;
+  colorFrom: string;
+  colorVia: string;
+  colorTo: string;
 }
 
 const userSchema = new Schema({
@@ -45,6 +48,18 @@ const userSchema = new Schema({
   links: {
     type: String,
     default: "[]",
+  },
+  colorFrom: {
+    type: String,
+    default: "",
+  },
+  colorVia: {
+    type: String,
+    default: "",
+  },
+  colorTo: {
+    type: String,
+    default: "",
   },
 });
 

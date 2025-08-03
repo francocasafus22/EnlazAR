@@ -7,20 +7,28 @@ type DevTreeLinkProps = {
 };
 
 export default function DevTreeLink({ link }: DevTreeLinkProps) {
-  const { attributes, listeners, setNodeRef, transform, transition } =
-    useSortable({
-      id: link.id,
-    });
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({
+    id: link.id,
+  });
 
   const style = {
     transform: CSS.Transform.toString(transform),
-    transition,
+    transition: transition,
+    cursor: isDragging ? "grabbing" : "grab",
   };
 
   return (
     <li
       ref={setNodeRef}
-      className="bg-slate-700 px-5 py-2 flex items-center gap-5 rounded-lg hover:bg-slate-800 focus:outline-2 focus:outline-slate-400"
+      className="bg-white/20 backdrop-blur-md border border-white/30 px-5 py-2 flex items-center gap-5 rounded-lg
+     hover:shadow-2xl transition-shadow duration-200 focus:outline-2 focus:outline-slate-400 text-white"
       style={style}
       {...attributes}
       {...listeners}

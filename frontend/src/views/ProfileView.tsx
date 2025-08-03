@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import ErrorMessage from "../components/ErrorMessage";
 import { useQueryClient, useMutation } from "@tanstack/react-query";
 import { updateProfile, uploadImage } from "../api/DevTreeAPI";
@@ -12,11 +12,15 @@ export default function ProfileView() {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
   } = useForm<ProfileForm>({
     defaultValues: {
       handle: data.handle,
       description: data.description,
+      colorFrom: data.colorFrom || "#1e293b", // slate-800
+      colorVia: data.colorVia || "#334155", // slate-700 (corregido)
+      colorTo: data.colorTo || "#475569", // slate-600
     },
   });
 
@@ -53,10 +57,12 @@ export default function ProfileView() {
   };
 
   const handleUserProfileForm = (formData: ProfileForm) => {
-    const user: User = queryClient.getQueryData(["user"])!;
-    user.description = formData.description;
-    user.handle = formData.handle;
-    updateProfileMutation.mutate(user);
+    const updatedUser: User = {
+      ...data,
+      ...formData,
+    };
+    queryClient.setQueryData(["user"], updatedUser);
+    updateProfileMutation.mutate(updatedUser);
   };
 
   return (
@@ -77,7 +83,6 @@ export default function ProfileView() {
         />
         {errors.handle && <ErrorMessage>{errors.handle.message}</ErrorMessage>}
       </div>
-
       <div className="grid grid-cols-1 gap-2">
         <label htmlFor="description">Descripción:</label>
         <textarea
@@ -86,7 +91,6 @@ export default function ProfileView() {
           {...register("description")}
         />
       </div>
-
       <div className="grid grid-cols-1 gap-2">
         <label htmlFor="handle">Imagen:</label>
         <input
@@ -96,6 +100,93 @@ export default function ProfileView() {
           className="border-none bg-slate-700 rounded-lg p-2 text-slate-400"
           accept="image/*"
           onChange={handleChange}
+        />
+      </div>
+
+      <label className="block mb-2 font-semibold text-white">
+        Elige tus colores para el degradado:
+      </label>
+      <div className="grid grid-cols-3 gap-4">
+        {/* colorFrom */}
+        <Controller
+          name="colorFrom"
+          control={control}
+          render={({ field }) => (
+            <div className="flex flex-col items-center">
+              <input
+                type="color"
+                {...field}
+                className="w-14 h-14 cursor-pointer rounded"
+              />
+              <input
+                type="text"
+                {...field}
+                onChange={(e) => {
+                  // Validar que tenga formato # + 6 hex
+                  const val = e.target.value;
+                  if (/^#([0-9A-Fa-f]{0,6})$/.test(val) || val === "") {
+                    field.onChange(val);
+                  }
+                }}
+                className="w-24 mt-1 text-center rounded px-1 bg-slate-600"
+                placeholder="#1e293b"
+              />
+            </div>
+          )}
+        />
+
+        {/* colorVia */}
+        <Controller
+          name="colorVia"
+          control={control}
+          render={({ field }) => (
+            <div className="flex flex-col items-center">
+              <input
+                type="color"
+                {...field}
+                className="w-14 h-14 cursor-pointer rounded"
+              />
+              <input
+                type="text"
+                {...field}
+                onChange={(e) => {
+                  const val = e.target.value;
+                  if (/^#([0-9A-Fa-f]{0,6})$/.test(val) || val === "") {
+                    field.onChange(val);
+                  }
+                }}
+                className="w-24 mt-1 text-center rounded px-1 bg-slate-600"
+                placeholder="#334155"
+              />
+            </div>
+          )}
+        />
+
+        {/* colorTo */}
+        <Controller
+          name="colorTo"
+          control={control}
+          render={({ field }) => (
+            <div className="flex flex-col items-center">
+              <input
+                type="color"
+                {...field}
+                className="w-14 h-14 cursor-pointer rounded"
+              />
+              <input
+                type="text"
+                {...field}
+                onChange={(e) => {
+                  const val = e.target.value;
+                  if (/^#([0-9A-Fa-f]{0,6})$/.test(val) || val === "") {
+                    field.onChange(val);
+                  }
+                }}
+                className="w-24 mt-1 text-center rounded px-1 bg-slate-600"
+                placeholder="#475569"
+              />
+            </div>
+          )}
         />
       </div>
 

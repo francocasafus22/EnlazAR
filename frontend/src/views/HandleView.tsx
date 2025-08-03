@@ -2,7 +2,8 @@ import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getUserByHandle } from "../api/DevTreeAPI";
 import Loading from "../components/Loading";
-import HandleData from "./HandleData";
+import HandleData from "../components/HandleData";
+import { useEffect } from "react";
 
 export default function HandleView() {
   const params = useParams();
@@ -14,12 +15,17 @@ export default function HandleView() {
     retry: 1,
   });
 
+  useEffect(() => {
+    document.body.style.minHeight = "100vh";
+    document.body.style.margin = "0";
+    document.body.style.background = `linear-gradient(to bottom, ${data?.colorFrom}, ${data?.colorVia}, ${data?.colorTo})`;
+    return () => {
+      document.body.style.background = "";
+    };
+  }, [data]);
+
   if (isLoading) return <Loading />;
   if (error) return <Navigate to={"/404"} />;
-
-  console.log(isLoading);
-  console.log(error);
-  console.log(data);
 
   if (data) return <HandleData data={data} />;
 }

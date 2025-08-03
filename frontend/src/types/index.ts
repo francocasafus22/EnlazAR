@@ -6,9 +6,22 @@ export type User = {
   description: string;
   image: string;
   links: string;
+  colorFrom: string;
+  colorVia: string;
+  colorTo: string;
 };
 
-export type UserHandle = Pick<User, "description" | "handle" | "image" | "links" | "name">
+export type UserHandle = Pick<
+  User,
+  | "description"
+  | "handle"
+  | "image"
+  | "links"
+  | "name"
+  | "colorFrom"
+  | "colorVia"
+  | "colorTo"
+>;
 
 export type RegisterForm = Pick<User, "handle" | "email" | "name"> & {
   password: string;
@@ -19,7 +32,10 @@ export type LoginForm = Pick<User, "email"> & {
   password: string;
 };
 
-export type ProfileForm = Pick<User, "handle" | "description">;
+export type ProfileForm = Pick<
+  User,
+  "handle" | "description" | "colorFrom" | "colorVia" | "colorTo"
+>;
 
 export type SocialNetworks = {
   id: number;

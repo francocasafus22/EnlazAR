@@ -6,7 +6,7 @@ import AuthLayout from "./layouts/AuthLayout";
 import AppLayout from "./layouts/AppLayout";
 import LinkTreeView from "./views/LinkTreeView";
 import ProfileView from "./views/ProfileView";
-import HandleView from "./components/HandleView";
+import HandleView from "./views/HandleView";
 import NotFoundView from "./views/NotFoundView";
 
 export default function Router() {

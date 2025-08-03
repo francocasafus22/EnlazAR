@@ -8,7 +8,7 @@ export default function Logo() {
         alt="Logotipo DevTree"
         className="max-w-[50px] h-auto"
       />
-      <h1 className="font-bold text-3xl">EnlazAR</h1>
+      <h1 className="font-bold text-4xl">EnlazAR</h1>
     </Link>
   );
 }

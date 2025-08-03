@@ -69,7 +69,7 @@ export default function SearchForm() {
 
       <input
         type="submit"
-        className="bg-gradient-to-r from-lime-400 to-cyan-400 p-3 text-lg w-full uppercase rounded-lg font-bold cursor-pointer"
+        className="bg-gradient-to-r from-lime-400 to-cyan-400 p-3 text-lg w-full uppercase rounded-lg font-bold cursor-pointer hover:bg-gradient-to-r hover:from-lime-500 hover:to-cyan-500"
         value="Obtener mi DevTree"
       />
     </form>
