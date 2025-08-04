@@ -51,15 +51,15 @@ const userSchema = new Schema({
   },
   colorFrom: {
     type: String,
-    default: "",
+    default: "#1e293b",
   },
   colorVia: {
     type: String,
-    default: "",
+    default: "#334155",
   },
   colorTo: {
     type: String,
-    default: "",
+    default: "#475569",
   },
 });
 
