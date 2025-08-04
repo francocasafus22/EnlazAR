@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { social } from "../data/social";
-import DevTreeInputs from "../components/DevTreeInputs";
+import DevTreeInputs from "../components/EnlazarInputs";
 import { isValidUrl } from "../utils/index";
 import { toast } from "sonner";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { updateProfile } from "../api/DevTreeAPI";
+import { updateProfile } from "../api/EnlazarAPI";
 import type { SocialNetworks, User } from "../types";
 
 export default function LinkTreeView() {

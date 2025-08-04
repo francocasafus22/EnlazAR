@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Navigate } from "react-router-dom";
-import { getUser } from "../api/DevTreeAPI";
-import DevTree from "../components/DevTree";
+import { getUser } from "../api/EnlazarAPI";
+import Enlazar from "../components/Enlazar";
 
 export default function AppLayout() {
   const { data, isLoading, isError } = useQuery({
@@ -17,5 +17,5 @@ export default function AppLayout() {
     if (!token) return <Navigate to={"/auth/login"}></Navigate>;
   }
 
-  if (data) return <DevTree data={data} />;
+  if (data) return <Enlazar data={data} />;
 }

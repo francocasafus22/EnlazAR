@@ -1,5 +1,5 @@
 import type { SocialNetworks, UserHandle } from "../types";
-import DevTreeLink from "./DevTreeLink";
+import DevTreeLink from "./EnlazarLink";
 
 type HandleDataProps = {
   data: UserHandle;

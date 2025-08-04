@@ -1,7 +1,7 @@
 import { useForm, Controller } from "react-hook-form";
 import ErrorMessage from "../components/ErrorMessage";
 import { useQueryClient, useMutation } from "@tanstack/react-query";
-import { updateProfile, uploadImage } from "../api/DevTreeAPI";
+import { updateProfile, uploadImage } from "../api/EnlazarAPI";
 import type { ProfileForm, User } from "../types";
 import { toast } from "sonner";
 

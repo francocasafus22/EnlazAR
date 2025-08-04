@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import NavigationTabs from "./NavigationTabs";
-import DevTreeLink from "../components/DevTreeLink";
+import DevTreeLink from "./EnlazarLink";
 import { Toaster } from "sonner";
 import { DndContext, type DragEndEvent, closestCenter } from "@dnd-kit/core";
 import {

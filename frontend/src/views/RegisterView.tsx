@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
-import { registerUser } from "../api/DevTreeAPI";
+import { registerUser } from "../api/EnlazarAPI";
 import { useForm } from "react-hook-form";
 
 import { toast } from "sonner";
