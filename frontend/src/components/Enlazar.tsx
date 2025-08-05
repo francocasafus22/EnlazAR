@@ -82,7 +82,7 @@ export default function DevTree({ data }: DevTreeProps) {
             >
               <p className="text-4xl text-center text-white">{data.handle}</p>
               <img
-                src={data.image || "../../public/userplaceholder.png"}
+                src={data.image || "/userplaceholder.png"}
                 alt="Imagen Perfil"
                 className="mx-auto w-[250px] h-[250px] object-cover rounded-full border-6 border-white/30"
               />
