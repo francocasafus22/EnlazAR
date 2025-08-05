@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Logo from "../components/Logo";
 
-export default function AuthLayout() {
+export default function HandleLayout() {
   return (
     <>
       <div className="min-h-screen min-w-screen flex flex-col items-center px-5">
