@@ -6,9 +6,9 @@ export default function Logo() {
       <img
         src="/logo.png"
         alt="Logotipo DevTree"
-        className="max-w-[50px] h-auto"
+        className="max-w-[40px] h-auto"
       />
-      <h1 className="font-bold text-4xl">EnlazAR</h1>
+      <h1 className="font-bold text-3xl">EnlazAR</h1>
     </Link>
   );
 }
