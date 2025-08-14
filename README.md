@@ -7,24 +7,27 @@
 </p>
 
 ## 📋 Índice
-- [Descripción](#descripción)
+- [Descripción](#descripcion)
 - [Capturas](#capturas)
-- [Características](#características)
-- [Instalación](#instalación)
-- [Uso](#uso)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Contribuir](#contribuir)
-- [Tecnologías](#tecnologías)
-- [Licencia](#licencia)
+- [Funcionalidades](#funcionalidades)
+- [Instalación](#instalacion)
+- [Tecnologías](#tecnologias)
 - [Contacto](#contacto)
 
+<h2 id="descripcion">📖 Descripción</h2>
 
-## 📖 Descripción
 **EnlazAR** es una plataforma que permite a los usuarios centralizar todos sus enlaces importantes en un solo lugar, creando una página personal personalizable que puede compartirse fácilmente en redes sociales.
 Ideal para influencers, creadores de contenido, profesionales y cualquier persona que quiera organizar sus perfiles, redes, portafolios y enlaces importantes de manera elegante y accesible.
 
+<h2 id="capturas">📸 Capturas</h2>
 
-## :hammer:Funcionalidades del proyecto
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c24a77df-6bde-4dd2-92c0-37940fa1576d" width="500"/>
+  <img src="https://github.com/user-attachments/assets/6d2972eb-bad3-4fd7-9c8b-512b3bc0c562" width="500"/>
+</p>
+
+<h2 id="funcionalidades">:hammer: Funcionalidades</h2>
+
 - 🌳 Página unica para cada usuario con todos sus enlaces a redes sociales. 
 - ✅ Personalización visual de tu perfil.
 - 🔗 Búsqueda de handle disponibles. 
@@ -34,7 +37,8 @@ Ideal para influencers, creadores de contenido, profesionales y cualquier person
 - 🔒 Privacidad y permisos: elegir qué enlaces son públicos o privados, y elegir el orden de cada uno.
 - ✅ Validaciónes y autorización para cada formulario y página.
 
-## ⚙️ Instalación
+<h2 id="instalacion">⚙️ Instalación</h2>
+
 🔹 Backend
 ```bash
 # 1️⃣ Clona el repositorio
@@ -77,8 +81,7 @@ VITE_API_URL = http://localhost:3000
 npm run dev
 
 ```
-
-## 🛠 Tecnologías
+<h2 id="tecnologias">🛠 Tecnologías</h2>
 
 ### 🔹 Backend
 - ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white) **Node.js**  
