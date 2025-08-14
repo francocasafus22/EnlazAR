@@ -99,6 +99,14 @@ npm run dev
 
 <h2 id="contacto">📬 Contacto</h2>
 
-[![GitHub](https://img.shields.io/badge/GitHub-francocasafus22-181717?style=for-the-badge&logo=github)](https://github.com/francocasafus22)  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-FrancoCasafus-0077B5?style=for-the-badge&logo=linkedin)]([https://www.linkedin.com/in/francocasafus](https://www.linkedin.com/in/franco-casafus-17ba47230/))  
-[![Email](https://img.shields.io/badge/Email-francocasafus55@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:francocasafus55@gmail.com)
+<p align="center">
+  <a href="https://github.com/francocasafus22">
+    <img src="https://img.shields.io/badge/GitHub-francocasafus22-181717?style=for-the-badge&logo=github" alt="GitHub"/>
+  </a>
+  <a href="https://www.linkedin.com/in/franco-casafus-17ba47230/">
+    <img src="https://img.shields.io/badge/LinkedIn-FrancoCasafus-0077B5?style=for-the-badge&logo=linkedin" alt="LinkedIn"/>
+  </a>
+  <a href="mailto:francocasafus55@gmail.com">
+    <img src="https://img.shields.io/badge/Email-francocasafus55@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
+  </a>
+</p>
