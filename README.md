@@ -18,13 +18,11 @@
 - [Licencia](#licencia)
 - [Contacto](#contacto)
 
----
 
 ## 📖 Descripción
 **EnlazAR** es una plataforma que permite a los usuarios centralizar todos sus enlaces importantes en un solo lugar, creando una página personal personalizable que puede compartirse fácilmente en redes sociales.
 Ideal para influencers, creadores de contenido, profesionales y cualquier persona que quiera organizar sus perfiles, redes, portafolios y enlaces importantes de manera elegante y accesible.
 
----
 
 ## :hammer:Funcionalidades del proyecto
 - 🌳 Página unica para cada usuario con todos sus enlaces a redes sociales. 
@@ -35,8 +33,6 @@ Ideal para influencers, creadores de contenido, profesionales y cualquier person
 - 👤 Perfil de usuario: editar nombre, foto, bio y configuración de enlaces.
 - 🔒 Privacidad y permisos: elegir qué enlaces son públicos o privados, y elegir el orden de cada uno.
 - ✅ Validaciónes y autorización para cada formulario y página.
-  
----
 
 ## ⚙️ Instalación
 🔹 Backend
@@ -81,7 +77,6 @@ VITE_API_URL = http://localhost:3000
 npm run dev
 
 ```
----
 
 ## 🛠 Tecnologías
 
@@ -98,8 +93,8 @@ npm run dev
 - ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white) **Tailwind CSS**  
 - ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white) **Axios**
 
----
-## 📬 Contacto
+
+<h2 id="contacto">📬 Contacto</h2>
 
 [![GitHub](https://img.shields.io/badge/GitHub-francocasafus22-181717?style=for-the-badge&logo=github)](https://github.com/francocasafus22)  
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-FrancoCasafus-0077B5?style=for-the-badge&logo=linkedin)]([https://www.linkedin.com/in/francocasafus](https://www.linkedin.com/in/franco-casafus-17ba47230/))  
