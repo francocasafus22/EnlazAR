@@ -22,8 +22,8 @@ Ideal para influencers, creadores de contenido, profesionales y cualquier person
 <h2 id="capturas">📸 Capturas</h2>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/c24a77df-6bde-4dd2-92c0-37940fa1576d" width="400"/>
-  <img src="https://github.com/user-attachments/assets/6d2972eb-bad3-4fd7-9c8b-512b3bc0c562" width="400"/>
+  <img src="https://github.com/user-attachments/assets/c24a77df-6bde-4dd2-92c0-37940fa1576d" width="500"/>
+  <img src="https://github.com/user-attachments/assets/6d2972eb-bad3-4fd7-9c8b-512b3bc0c562" width="500"/>
 </p>
 
 <h2 id="funcionalidades">:hammer: Funcionalidades</h2>
