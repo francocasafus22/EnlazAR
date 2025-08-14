@@ -45,7 +45,7 @@ Ideal para influencers, creadores de contenido, profesionales y cualquier person
 git clone https://github.com/francocasafus22/EnlazAR.git
 
 # 2️⃣ Accede al directorio del Backend
-cd EnlazAR/backend
+cd backend
 
 # 3️⃣ Instala dependencias
 npm install
