@@ -57,7 +57,7 @@ export default function DevTree({ data }: DevTreeProps) {
     <>
       <Header />
       <div className=" min-h-screen py-10">
-        <main className="mx-auto max-w-5xl p-10 md:p-0">
+        <main className="mx-auto max-w-5xl p-10">
           <NavigationTabs />
           <div className="flex justify-end">
             <Link
@@ -70,12 +70,12 @@ export default function DevTree({ data }: DevTreeProps) {
             </Link>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-10 mt-10">
+          <div className="flex flex-col ml:flex-row gap-10 mt-10">
             <div className="flex-1 ">
               <Outlet />
             </div>
             <div
-              className="w-full md:w-96 px-5 py-10 space-y-6 shadow-2xl"
+              className="w-full ml:w-96 px-5 py-10 space-y-6 shadow-2xl"
               style={{
                 background: `linear-gradient(to bottom, ${data.colorFrom}, ${data.colorVia}, ${data.colorTo})`,
               }}

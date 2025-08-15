@@ -21,10 +21,11 @@ export default function DevTreeInputs({
       ></div>
       <input
         type="text"
-        className="flex-1 bg-slate-700 rounded-lg p-2 shadow-sm border-none"
+        className="flex-1 bg-slate-700 rounded-lg p-2 shadow-sm border-none  md: w-2 "
         value={item.url}
         onChange={handleUrlChange}
         name={item.name}
+        placeholder={item.name.charAt(0).toUpperCase() + item.name.slice(1)}
       />
       <Switch
         checked={item.enabled}

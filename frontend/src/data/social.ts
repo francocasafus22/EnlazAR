@@ -10,4 +10,7 @@ export const social: DevTreeLink[] = [
   { name: "twitch", url: "", enabled: false },
   { name: "linkedin", url: "", enabled: false },
   { name: "onlyfans", url: "", enabled: false },
+  { name: "discord", url: "", enabled: false },
+  { name: "whatsapp", url: "", enabled: false },
+  { name: "telegram", url: "", enabled: false },
 ];

@@ -8,6 +8,7 @@
 
 @theme {
   --background-image-home: url("/bg.svg");
+  --breakpoint-ml: 875px;
 }
 
 @utility bg-home-xl {
