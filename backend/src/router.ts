@@ -12,6 +12,7 @@ import {
 } from "./controllers/userController";
 import { handleInputErrors } from "./middleware/validation";
 import { authenticate } from "./middleware/auth";
+import cors from "cors";
 
 const router = Router();
 
@@ -61,6 +62,6 @@ router.post(
   searchByHandle
 );
 
-router.get("/ping", ping);
+router.get("/ping", cors(), ping);
 
 export default router;
