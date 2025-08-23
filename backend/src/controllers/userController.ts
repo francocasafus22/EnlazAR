@@ -170,5 +170,5 @@ export const searchByHandle = async (req: Request, res: Response) => {
 };
 
 export const ping = async (req: Request, res: Response) => {
-  res.status(200).send("pong");
+  res.status(200).json({ ping: "pong" });
 };

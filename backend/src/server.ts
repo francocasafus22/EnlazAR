@@ -9,6 +9,11 @@ connectDB();
 
 const app = express();
 
+// Endpoint para evitar el cold start
+app.get("/ping", cors(), (_req, res) => {
+  res.status(200).json({ ping: "pong 🏓" });
+});
+
 // Cors
 
 app.use(cors(corsConfig));

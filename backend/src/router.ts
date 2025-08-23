@@ -5,7 +5,6 @@ import {
   getUser,
   getUserByHandle,
   login,
-  ping,
   searchByHandle,
   updateProfile,
   updateProfileImage,
@@ -61,7 +60,5 @@ router.post(
   body("handle").notEmpty().withMessage("Ingrese un handle"),
   searchByHandle
 );
-
-router.get("/ping", cors(), ping);
 
 export default router;
