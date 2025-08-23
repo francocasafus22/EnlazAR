@@ -12,6 +12,7 @@
 - [Funcionalidades](#funcionalidades)
 - [Instalación](#instalacion)
 - [Tecnologías](#tecnologias)
+- [Demo](#demo)
 - [Contacto](#contacto)
 
 <h2 id="descripcion">📖 Descripción</h2>
@@ -96,6 +97,10 @@ npm run dev
 - ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white) **Tailwind CSS**  
 - ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white) **Axios**
 
+<h2 id="demo">🌐 Demo</h2>
+
+🚀 Puedes probar la aplicación aquí:  
+👉 [EnlazAR - Página en línea](https://enlazar.netlify.app/)
 
 <h2 id="contacto">📬 Contacto</h2>
 
