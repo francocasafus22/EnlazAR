@@ -168,3 +168,7 @@ export const searchByHandle = async (req: Request, res: Response) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+export const ping = async (req: Request, res: Response) => {
+  res.status(200).send("pong");
+};
