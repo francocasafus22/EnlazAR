@@ -9,7 +9,7 @@ export default function HandleLayout() {
           <div className="max-w-lg w-full py-10">
             <Outlet />
             <div className="flex items-center justify-center pt-5">
-              <div className="bg-white/30 p-4 backdrop-blur-md border border-white/30 rounded-full shadow-md scale-65 hover:shadow-2xl hover:scale-75 transition-transform duration-400">
+              <div className=" bg-white/30 p-4 backdrop-blur-md border border-white/30 rounded-full shadow-md scale-65 hover:shadow-2xl hover:scale-70 transition-transform duration-400">
                 <Logo />
               </div>
             </div>

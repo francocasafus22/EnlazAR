@@ -17,6 +17,7 @@ export default function ProfileView() {
   } = useForm<ProfileForm>({
     defaultValues: {
       handle: data.handle,
+      name: data.name,
       description: data.description,
       colorFrom: data.colorFrom || "#1e293b", // slate-800
       colorVia: data.colorVia || "#334155", // slate-700 (corregido)
@@ -82,6 +83,15 @@ export default function ProfileView() {
           })}
         />
         {errors.handle && <ErrorMessage>{errors.handle.message}</ErrorMessage>}
+      </div>
+      <div className="grid grid-cols-1 gap-2">
+        <label htmlFor="name">Nombre:</label>
+        <input
+          type="text"
+          className="border-none bg-slate-700 rounded-lg p-2"
+          placeholder="Nombre visible"
+          {...register("name")}
+        />
       </div>
       <div className="grid grid-cols-1 gap-2">
         <label htmlFor="description">Descripción:</label>

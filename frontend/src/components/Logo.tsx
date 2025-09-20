@@ -6,7 +6,7 @@ export default function Logo() {
       <img
         src="/logo.png"
         alt="Logotipo DevTree"
-        className="max-w-[40px] h-auto"
+        className=" max-w-[40px] h-auto "
       />
       <h1 className="font-bold text-3xl">Enlazar</h1>
     </Link>

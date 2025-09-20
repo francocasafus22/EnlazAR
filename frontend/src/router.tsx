@@ -5,6 +5,7 @@ import Home from "./views/HomeView";
 import AuthLayout from "./layouts/AuthLayout";
 import AppLayout from "./layouts/AppLayout";
 import LinkTreeView from "./views/LinkTreeView";
+import GeneralLinkView from "./views/GeneralLinkView";
 import ProfileView from "./views/ProfileView";
 import HandleView from "./views/HandleView";
 import NotFoundView from "./views/NotFoundView";
@@ -22,6 +23,7 @@ export default function Router() {
 
         <Route path="/admin" element={<AppLayout></AppLayout>}>
           <Route index={true} element={<LinkTreeView />}></Route>
+          <Route path="links" element={<GeneralLinkView />}></Route>
           <Route path="profile" element={<ProfileView />}></Route>
         </Route>
 

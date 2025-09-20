@@ -12,7 +12,6 @@ export default function HandleData({ data }: HandleDataProps) {
 
   return (
     <div className="space-y-6">
-      <p className="text-center text-5xl font-black">{data.handle}</p>
       {data.image && (
         <img
           src={data.image}
@@ -20,6 +19,7 @@ export default function HandleData({ data }: HandleDataProps) {
           className="w-[250px] h-[250px] object-cover  mx-auto rounded-full border-6 border-white/30 shadow-2xl"
         />
       )}
+      <p className="text-center text-5xl font-black">{data.name}</p>
       <p className="text-lg text-center font-bold">{data.description}</p>
 
       <div className="mt-10 flex flex-col gap-6">

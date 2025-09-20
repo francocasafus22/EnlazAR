@@ -6,6 +6,7 @@ export type User = {
   description: string;
   image: string;
   links: string;
+  general_links: string;
   colorFrom: string;
   colorVia: string;
   colorTo: string;
@@ -21,6 +22,7 @@ export type UserHandle = Pick<
   | "colorFrom"
   | "colorVia"
   | "colorTo"
+  | "general_links"
 >;
 
 export type RegisterForm = Pick<User, "handle" | "email" | "name"> & {
@@ -34,7 +36,7 @@ export type LoginForm = Pick<User, "email"> & {
 
 export type ProfileForm = Pick<
   User,
-  "handle" | "description" | "colorFrom" | "colorVia" | "colorTo"
+  "handle" | "description" | "colorFrom" | "colorVia" | "colorTo" | "name"
 >;
 
 export type SocialNetworks = {

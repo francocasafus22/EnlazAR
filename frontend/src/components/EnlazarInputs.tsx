@@ -14,7 +14,7 @@ export default function DevTreeInputs({
   handleEnableLink,
 }: DevTreeInputsProps) {
   return (
-    <div className="bg-slate-800 shadow-sm p-5 flex items-center gap-3">
+    <div className="bg-slate-800 shadow-sm p-5 flex items-center gap-3 rounded-md">
       <div
         className="w-12 h-12 bg-cover"
         style={{ backgroundImage: `url("/social/icon_${item.name}.svg")` }}

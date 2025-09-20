@@ -70,7 +70,15 @@ export const getUser = async (req: Request, res: Response) => {
 
 export const updateProfile = async (req: Request, res: Response) => {
   try {
-    const { description, links, colorFrom, colorVia, colorTo } = req.body;
+    const {
+      description,
+      links,
+      general_links,
+      colorFrom,
+      colorVia,
+      colorTo,
+      name,
+    } = req.body;
 
     const handle = slug(req.body.handle, ""); //Le saca todos los espacios y mayusculas
     const handleExist = await User.findOne({ handle }); // Verifica que haya un user con ese handler
@@ -83,8 +91,10 @@ export const updateProfile = async (req: Request, res: Response) => {
 
     // Actualizar el user
     req.user.description = description;
+    req.user.name = name;
     req.user.handle = handle;
     req.user.links = links;
+    req.user.general_links = general_links;
     req.user.colorFrom = colorFrom;
     req.user.colorVia = colorVia;
     req.user.colorTo = colorTo;

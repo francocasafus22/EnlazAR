@@ -75,12 +75,12 @@ export default function DevTree({ data }: DevTreeProps) {
               <Outlet />
             </div>
             <div
-              className="w-full ml:w-96 px-5 py-10 space-y-6 shadow-2xl"
+              className="w-full ml:w-96 px-5 py-10 space-y-6 shadow-2xl rounded-md"
               style={{
                 background: `linear-gradient(to bottom, ${data.colorFrom}, ${data.colorVia}, ${data.colorTo})`,
               }}
             >
-              <p className="text-4xl text-center text-white">{data.handle}</p>
+              <p className="text-4xl text-center text-white">{data.name}</p>
               <img
                 src={data.image || "/userplaceholder.png"}
                 alt="Imagen Perfil"
